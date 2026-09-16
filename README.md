@@ -1,16 +1,22 @@
+# Sebastian Renker
 
+Building trusted infrastructure for autonomous AI agents.
 
-<!--
-**sebastianrenker/sebastianrenker** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I design and build the **Renker platform** — identity, authorization, policy, and
+tamper-evident audit for agentic AI systems — plus a small portfolio of applied
+AI and security products under **Renker Industries**.
 
-Here are some ideas to get you started:
+## Platform
+- **[renker-core](https://github.com/sebastianrenker/renker-core)** — shared identity/permissions/audit/policy foundation
+- **[renker-core-authz](https://github.com/sebastianrenker/renker-core-authz)** — deterministic capability + policy engine with a tamper-evident audit log
+- **[renker-agent-demo](https://github.com/sebastianrenker/renker-agent-demo)** — MCP-server authorization demo against prompt injection
+- **[renker-swarm](https://github.com/sebastianrenker/renker-swarm)** — self-throttling, multi-provider AI agent orchestrator
+- **[custos](https://github.com/renker-industries/custos)** — proof-based guardrail plugin for AI coding agents
+- **[renker-whitepaper](https://github.com/sebastianrenker/renker-whitepaper)** — architecture, threat model, and honest limitations
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Applied AI & security
+- **[rencora-public](https://github.com/sebastianrenker/rencora-public)** — JARVIS-style holographic desktop AI assistant
+- **[continuum](https://github.com/sebastianrenker/continuum)** — continual-learning AI research prototype
+- **[renkervault](https://github.com/sebastianrenker/renkervault)** — end-to-end encrypted chat with a zero-knowledge relay and post-quantum handshake
+
+[Whitepaper](https://github.com/sebastianrenker/renker-whitepaper) · [sebastianrenker.github.io](https://sebastianrenker.github.io)
