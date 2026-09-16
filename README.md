@@ -1,7 +1,7 @@
 <h1 align="center">Renker — Trusted Infrastructure for Autonomous AI</h1>
 
 <p align="center">
-  <em>Deterministische Autorisierung, nachvollziehbare Audit-Trails und Zero-Knowledge-Kommunikation<br/>für eine Welt, in der KI-Agenten eigenständig handeln.</em>
+  <em>Deterministische Autorisierung, nachvollziehbare Audit-Trails und inhaltsblinde E2E-Kommunikation<br/>für eine Welt, in der KI-Agenten eigenständig handeln.</em>
 </p>
 
 <p align="center">
@@ -22,9 +22,9 @@
 Autonome KI-Agenten treffen Entscheidungen und lösen Aktionen aus, bevor ein Mensch
 mitliest. **Renker** ist ein Forschungs- und Prototyp-Ökosystem, das die fehlende
 Vertrauensschicht dafür baut: Jede Agenten-Aktion läuft durch eine deterministische
-Policy-Engine (`ALLOW` / `DENY` / `REQUIRE_APPROVAL`), landet in einem manipulations­sicheren
-Audit-Log und kommuniziert – wo nötig – über einen Ende-zu-Ende- und post-quantum-verschlüsselten
-Kanal.
+Policy-Engine (`ALLOW` / `DENY` / `REQUIRE_APPROVAL`), landet in einem manipulations­erkennenden
+(tamper-evident, nicht tamper-proof) Audit-Log und kommuniziert – wo nötig – über einen
+Ende-zu-Ende-verschlüsselten Kanal mit Post-Quantum-Hybrid-Handshake (X25519 + ML-KEM-768).
 
 Das adressiert konkrete Angriffsflächen agentischer Systeme – allen voran **Prompt-Injection**,
 bei der ein Agent aus manipuliertem Kontext heraus Aktionen ausführt, die der Nutzer nie
@@ -49,7 +49,7 @@ flowchart TB
     end
 
     subgraph comms["Sichere Kommunikation"]
-        vault["<b>renkervault</b><br/>Zero-Knowledge E2E-Chat<br/>Double Ratchet · PQ-Hybrid<br/><i>TypeScript</i>"]
+        vault["<b>renkervault</b><br/>Inhaltsblinder E2E-Chat<br/>Double Ratchet · PQ-Hybrid<br/><i>TypeScript</i>"]
     end
 
     rencora -->|"Tool-Aufruf zur Prüfung"| core
@@ -82,7 +82,7 @@ den verschlüsselten Kanal, wenn Agenten oder Nutzer vertraulich kommunizieren m
 | [**renker-core-authz**](https://github.com/sebastianrenker/renker-core-authz) | Deterministische Capability- + Policy-Engine mit manipulationssicherem Audit für Agenten-Aktionen | Python · Apache-2.0 |
 | [**renker-core**](https://github.com/sebastianrenker/renker-core) | Gemeinsame Plattform-Foundation: Identity, Permissions, Audit, Policy | Python |
 | [**continuum**](https://github.com/sebastianrenker/continuum) | Prototyp eines kontinuierlich lernenden KI-Forschungssystems (Memory, Bayesian Optimization, Safety Gates, Anti-Hallucination) | Python |
-| [**renkervault**](https://github.com/sebastianrenker/renkervault) | Zero-Knowledge E2E-verschlüsselter Chat (Double Ratchet, PQ-Hybrid-Handshake, Duress-Modus) | TypeScript |
+| [**renkervault**](https://github.com/sebastianrenker/renkervault) | Inhaltsblinder E2E-verschlüsselter Chat-Prototyp (Double Ratchet, PQ-Hybrid-Handshake, Duress-Modus) | TypeScript |
 | [**rencora**](https://github.com/sebastianrenker/rencora) | Persönlicher Desktop-KI-Assistent (Sprache, Screen/Kamera, Agenten, Gedächtnis) | Python · PyQt6 |
 | [**sebastianrenker.github.io**](https://github.com/sebastianrenker/sebastianrenker.github.io) | Plattform-Landingpage & Doku-Hub | HTML/CSS |
 
@@ -91,7 +91,7 @@ den verschlüsselten Kanal, wenn Agenten oder Nutzer vertraulich kommunizieren m
 ## Schwerpunkte
 
 `agentic-ai` · `authorization` · `policy-engine` · `prompt-injection` · `tamper-evident-audit`
-· `end-to-end-encryption` · `post-quantum` · `zero-knowledge`
+· `end-to-end-encryption` · `post-quantum-hybrid` · `metadata-minimization`
 
 ---
 
