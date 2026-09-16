@@ -75,6 +75,25 @@ deterministic authorization + controlled autonomy*, flagship = `renker-core`. Cl
 labelling. What does **not** exist and is not claimed: users, revenue, adoption,
 external audits, production deployments. See `VISION.md`.
 
+## End-to-end demonstration (reproducible, real output)
+
+`renker-agent-demo` is the canonical adversarial demo. Run:
+
+```bash
+pip install -e .    # pulls renker-core-authz
+python scripts/run_demo.py
+```
+
+Verified this pass — actual output (not mocked): legit read/write → **ALLOW** (ran);
+an injected `read ../secrets` and `write ../traversal` → **DENY** (outside capability
+scope); an injected `send exfil.eml` → **REQUIRE_APPROVAL** → human **declined** (not
+sent); a legit `send reply.eml` → **REQUIRE_APPROVAL** → human **approved** (sent). The
+tamper-evident audit log records all six decisions and `audit.verify()` reports
+`chain intact`. This demonstrates the exact boundary: *prompt injection changed what the
+agent requested, not what was allowed* — and, per the honest framing, an
+**approval-gated** authorized action still needs a human, i.e. the kernel does not judge
+semantic intent on its own.
+
 ## Corrections applied (files changed)
 
 - `renkervault/README.md` (5×), `renkervault/SECURITY.md` (1×): Zero-Knowledge → content-blind.
