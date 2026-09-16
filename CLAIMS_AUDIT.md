@@ -22,10 +22,11 @@ Verification environment: Python 3.12.10, Node/vitest, Windows/AMD64, 2026-09-16
 |---|---|---|
 | renker-core | `pytest -q` | **132 passed** |
 | renker-core | `python benchmarks/bench.py` | measured (see `benchmarks/RESULTS.md`) |
+| renker-core-authz | `pytest -q` | **89 passed** |
 | renkervault (client) | `npm test` (vitest) | **82 passed** (11 files) |
 
-Not executed in this pass (test files exist, counted): renker-core-authz (12),
-continuum (9), rencora (18), renker-agent-demo (1), CUSTOS (1), renker-swarm (3).
+Not executed in this pass (test files exist, counted): continuum (9), rencora (18),
+renker-agent-demo (1), CUSTOS (1), renker-swarm (3).
 
 ## Claim-by-claim
 

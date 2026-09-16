@@ -38,7 +38,7 @@ crypto prototype (RenkerVault), or an application (Rencora).
 | Repo | Role | License | Tests | Verified this pass |
 |---|---|---|---|---|
 | renker-core | **Flagship** — deterministic authorization kernel | Proprietary (open-core) | 17 files | ✅ 132 passed + benchmarks |
-| renker-core-authz | Public Apache-2.0 authz core (shipped subset) | Apache-2.0 | 12 files | present, not run |
+| renker-core-authz | Public Apache-2.0 authz core (shipped subset) | Apache-2.0 | 12 files | ✅ 89 passed |
 | renker-agent-demo | Demo: authz securing an agent | Apache-2.0 | 1 file | present, not run |
 | custos | Evidence-driven agent-claim verification (Claude Code plugin) | MIT | 1 file | present, not run |
 | renker-swarm | Free multi-agent orchestrator (controlled autonomy) | none found | 3 files | present, not run |
@@ -87,7 +87,7 @@ external audits, production deployments. See `VISION.md`.
 - **Nothing is independently reviewed.** Every security/crypto property is self-tested.
 - `renkervault` ships a self-composed E2E protocol — the highest-consequence unaudited surface.
 - Benchmarks are single-machine, single-run, no percentiles.
-- Test suites for 6 repos were **not executed** this pass — status is "tests present", not "passing".
+- Test suites for 5 repos were **not executed** this pass — status is "tests present", not "passing".
 - `renker-swarm` and `renker-whitepaper` have no LICENSE file.
 
 ## Recommended next steps (priority order)
