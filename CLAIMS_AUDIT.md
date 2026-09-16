@@ -24,9 +24,16 @@ Verification environment: Python 3.12.10, Node/vitest, Windows/AMD64, 2026-09-16
 | renker-core | `python benchmarks/bench.py` | measured (see `benchmarks/RESULTS.md`) |
 | renker-core-authz | `pytest -q` | **89 passed** |
 | renkervault (client) | `npm test` (vitest) | **82 passed** (11 files) |
+| continuum | `pytest -q` | **32 passed** |
+| rencora | `pytest tests/ -q` | **77 passed** |
+| CUSTOS | `pytest -q` | **16 passed** |
+| renker-agent-demo | `pytest -q` | **7 passed** |
 
-Not executed in this pass (test files exist, counted): continuum (9), rencora (18),
-renker-agent-demo (1), CUSTOS (1), renker-swarm (3).
+Portfolio total verified this pass: **435 tests passing** across 7 repos.
+
+Not passing / not applicable: **renker-swarm** — the 3 `test_*.py` files live in
+bundled sub-tools (leadtool/terminki/vogelsbergbox) and collect **0 tests**; the
+orchestrator core has no automated tests. Honest status: **NO CORE TESTS**.
 
 ## Claim-by-claim
 
@@ -42,9 +49,10 @@ renker-agent-demo (1), CUSTOS (1), renker-swarm (3).
 | E2E Double-Ratchet composition | renkervault | 82 vitest tests pass; composition of audited primitives, **self-composed, not externally audited** (disclosed in README) | **TESTED (composition), NOT AUDITED** | keep — already honest |
 | "manipulationssicher" (tamper-proof) audit in profile | profile | audit is tamper-**evident** only | **CORRECTED** → "tamper-evident, nicht tamper-proof" | done |
 | Prompt-injection addressed | renker-core, profile | kernel confines the *request* to the capability; does **not** "solve" prompt injection | **IMPLEMENTED, scoped** | "injection can change what is requested, never what is allowed" ✓ |
-| Continuum learning/adaptation | continuum | 9 test files present, not run here; research framing | **RESEARCH / TESTS PRESENT** | keep research label; see PORTFOLIO_AUDIT |
-| CUSTOS "verifies" agent claims | CUSTOS | evidence-driven checks; "test passed" ≠ "bug fixed" | **IMPLEMENTED** | scope as "evidence, not proof of correctness" |
-| Renker Swarm "autonomous" multi-agent | renker-swarm | orchestration loop; roles assigned by config, not emergent | **IMPLEMENTED** | "controlled autonomy; assigned roles" — avoid "emergent" |
+| Continuum learning/adaptation | continuum | 32 tests passing; Phase-0 research framing | **TESTED (as prototype) / RESEARCH** | keep research label; learning is hypothesis, see PORTFOLIO_AUDIT |
+| CUSTOS "verifies" agent claims | CUSTOS | 16 tests passing; evidence-driven checks; "test passed" ≠ "bug fixed" | **TESTED** | scope as "evidence, not proof of correctness" |
+| Renker Swarm "autonomous" multi-agent | renker-swarm | orchestration loop; roles assigned by config, not emergent; **no core tests** | **IMPLEMENTED, UNTESTED** | "controlled autonomy; assigned roles" — avoid "emergent"; add tests |
+| Rencora app enforces renker-core-style boundaries | rencora | 77 tests passing incl. `test_filesystem_security`, `test_capabilities`, `test_desktop_sandbox`, `test_audit_rotation` | **TESTED** | keep; it is the applied showcase |
 
 ## Corrections applied in this pass
 

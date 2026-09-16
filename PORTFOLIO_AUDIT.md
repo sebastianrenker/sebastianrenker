@@ -39,12 +39,12 @@ crypto prototype (RenkerVault), or an application (Rencora).
 |---|---|---|---|---|
 | renker-core | **Flagship** — deterministic authorization kernel | Proprietary (open-core) | 17 files | ✅ 132 passed + benchmarks |
 | renker-core-authz | Public Apache-2.0 authz core (shipped subset) | Apache-2.0 | 12 files | ✅ 89 passed |
-| renker-agent-demo | Demo: authz securing an agent | Apache-2.0 | 1 file | present, not run |
-| custos | Evidence-driven agent-claim verification (Claude Code plugin) | MIT | 1 file | present, not run |
-| renker-swarm | Free multi-agent orchestrator (controlled autonomy) | none found | 3 files | present, not run |
-| continuum | Research prototype (Phase 0), continual-learning architecture | MIT | 9 files | present, not run |
+| renker-agent-demo | Demo: authz securing an agent | Apache-2.0 | 1 file | ✅ 7 passed |
+| custos | Evidence-driven agent-claim verification (Claude Code plugin) | MIT | 1 file | ✅ 16 passed |
+| renker-swarm | Free multi-agent orchestrator (controlled autonomy) | none found | 3 files | ⚠️ 0 core tests |
+| continuum | Research prototype (Phase 0), continual-learning architecture | MIT | 9 files | ✅ 32 passed |
 | renkervault | Crypto **prototype** — content-blind E2E chat | MIT | 14 files | ✅ 82 passed (client) |
-| rencora | Application / showcase | Proprietary | 18 files | present, not run |
+| rencora | Application / showcase | Proprietary | 18 files | ✅ 77 passed |
 | renker-whitepaper | Documentation | none found | — | docs only |
 | sebastianrenker / .github.io | Profile & landing | — | — | claims corrected |
 
@@ -87,12 +87,13 @@ external audits, production deployments. See `VISION.md`.
 - **Nothing is independently reviewed.** Every security/crypto property is self-tested.
 - `renkervault` ships a self-composed E2E protocol — the highest-consequence unaudited surface.
 - Benchmarks are single-machine, single-run, no percentiles.
-- Test suites for 5 repos were **not executed** this pass — status is "tests present", not "passing".
-- `renker-swarm` and `renker-whitepaper` have no LICENSE file.
+- **435 tests pass across 7 repos** (this pass), but `renker-swarm`'s orchestrator core
+  has **0 automated tests** — its bundled sub-tools' test files collect nothing.
+- `renker-swarm` and `renker-whitepaper` have no LICENSE file (owner decision — not set here).
 
 ## Recommended next steps (priority order)
 
-1. Run + record the 6 un-run test suites; add a CI badge only where CI actually runs them.
+1. Add automated tests to the `renker-swarm` orchestrator core (only repo with none).
 2. External crypto review (or swap to `libsignal`) for `renkervault` before any real use.
 3. Consolidate `renker-core` redundant reports into `docs/archive/` and fix links.
 4. Define and run the Continuum learning-vs-memory evaluation before making a learning claim.

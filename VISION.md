@@ -43,7 +43,7 @@ would be invented. This is an engineering-and-research portfolio, not a company.
 
 ## Roadmap — evidence-driven, not feature-driven
 
-1. **Correctness** — done for the core (tests green). Extend to the un-run suites.
+1. **Correctness** — 435 tests green across 7 repos. Gap: add tests to the `renker-swarm` core.
 2. **Adversarial validation** — expand attack tests; fuzz the policy/path inputs.
 3. **Performance** — the `Path.resolve()` scope check is the first optimization target.
 4. **Integration** — route a real agent's actions through the guard end-to-end.
