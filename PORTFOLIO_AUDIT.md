@@ -17,7 +17,7 @@ This pass therefore did **not** need a large rewrite. Its concrete contributions
    `renkervault` and the profile — to "content-blind / metadata-minimizing", with
    explicit metadata-visibility disclosure. (A ZK claim with no ZK-proof code is the
    kind of thing a skeptical cryptographer flags immediately.)
-2. Corrected "manipulationssicher" (tamper-proof) → "tamper-evident" in the profile.
+2. Corrected the "tamper-proof" audit wording → "tamper-evident" in the profile.
 3. Added the missing `SECURITY_PROPERTIES.md` evidence matrix to `renker-core`, each
    row anchored to a real test.
 4. Committed **real** benchmark numbers (`renker-core/benchmarks/RESULTS.md`) instead
