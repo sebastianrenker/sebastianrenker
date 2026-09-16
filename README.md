@@ -12,11 +12,12 @@ AI and security products under **Renker Industries**.
 - **[renker-agent-demo](https://github.com/sebastianrenker/renker-agent-demo)** — MCP-server authorization demo against prompt injection
 - **[renker-swarm](https://github.com/sebastianrenker/renker-swarm)** — self-throttling, multi-provider AI agent orchestrator
 - **[custos](https://github.com/renker-industries/custos)** — proof-based guardrail plugin for AI coding agents
+- **[renker-flint](https://github.com/sebastianrenker/renker-flint)** — token-reduction measurement & operations layer for read-heavy agent sessions (concept phase)
 - **[renker-whitepaper](https://github.com/sebastianrenker/renker-whitepaper)** — architecture, threat model, and honest limitations
 
 ## Applied AI & security
 - **[rencora-public](https://github.com/sebastianrenker/rencora-public)** — JARVIS-style holographic desktop AI assistant
 - **[continuum](https://github.com/sebastianrenker/continuum)** — continual-learning AI research prototype
-- **[renkervault](https://github.com/sebastianrenker/renkervault)** — end-to-end encrypted chat with a zero-knowledge relay and post-quantum handshake
+- **[renkervault](https://github.com/sebastianrenker/renkervault)** — end-to-end encrypted chat with a content-blind relay and post-quantum hybrid handshake
 
 [Whitepaper](https://github.com/sebastianrenker/renker-whitepaper) · [sebastianrenker.github.io](https://sebastianrenker.github.io)
