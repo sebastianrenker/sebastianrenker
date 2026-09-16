@@ -47,21 +47,21 @@ orchestrator core has no automated tests. Honest status: **NO CORE TESTS**.
 | Post-quantum **primitive** in handshake (ML-KEM-768) | renkervault | real `@noble/post-quantum` `ml_kem768`, hybrid w/ X25519; crypto tests pass | **TESTED (primitive)** | "PQ-hybrid handshake" ✓ — **not** "post-quantum secure protocol" |
 | "Zero-Knowledge" relay | renkervault, profile, renkervault/SECURITY.md | **no ZK-proof code**; relay sees metadata (account IDs, device info, timing) | **CORRECTED** | now "content-blind / metadata-minimizing relay; not zero-knowledge" |
 | E2E Double-Ratchet composition | renkervault | 82 vitest tests pass; composition of audited primitives, **self-composed, not externally audited** (disclosed in README) | **TESTED (composition), NOT AUDITED** | keep — already honest |
-| "manipulationssicher" (tamper-proof) audit in profile | profile | audit is tamper-**evident** only | **CORRECTED** → "tamper-evident, nicht tamper-proof" | done |
+| "tamper-proof" audit claim in profile | profile | audit is tamper-**evident** only | **CORRECTED** → "tamper-evident, not tamper-proof" | done |
 | Prompt-injection addressed | renker-core, profile | kernel confines the *request* to the capability; does **not** "solve" prompt injection | **IMPLEMENTED, scoped** | "injection can change what is requested, never what is allowed" ✓ |
 | Continuum learning/adaptation | continuum | 32 tests passing; Phase-0 research framing | **TESTED (as prototype) / RESEARCH** | keep research label; learning is hypothesis, see PORTFOLIO_AUDIT |
 | CUSTOS "verifies" agent claims | CUSTOS | 16 tests passing; evidence-driven checks; "test passed" ≠ "bug fixed" | **TESTED** | scope as "evidence, not proof of correctness" |
 | Renker Swarm "autonomous" multi-agent | renker-swarm | orchestration loop; roles assigned by config, not emergent; **no core tests** | **IMPLEMENTED, UNTESTED** | "controlled autonomy; assigned roles" — avoid "emergent"; add tests |
 | Rencora app enforces renker-core-style boundaries | rencora | 77 tests passing incl. `test_filesystem_security`, `test_capabilities`, `test_desktop_sandbox`, `test_audit_rotation` | **TESTED** | keep; it is the applied showcase |
-| renker-flint "provably lowers token cost" | renker-flint | `MEASUREMENT.md` defines a provider-reported falsification protocol; `measurements/` is **empty** (Phase 0 not run) | **CONCEPT / NOT YET MEASURED** | keep "Konzeptphase"; numbers stay `inferred` until a provider-reported baseline exists — no savings claim as fact yet |
+| renker-flint "provably lowers token cost" | renker-flint | `MEASUREMENT.md` defines a provider-reported falsification protocol; `measurements/` is **empty** (Phase 0 not run) | **CONCEPT / NOT YET MEASURED** | keep "concept phase"; numbers stay `inferred` until a provider-reported baseline exists — no savings claim as fact yet |
 
 ## Corrections applied in this pass
 
 1. **renkervault** README/SECURITY.md: removed "Zero-Knowledge" as a property; now
    "content-blind / metadata-minimizing relay", with explicit metadata-visibility disclosure.
-2. **profile** README: "Zero-Knowledge-Kommunikation" → "inhaltsblinde E2E-Kommunikation";
-   "manipulationssicheren Audit-Log" → "manipulations­erkennenden (tamper-evident)";
-   "post-quantum-verschlüsselt" → "Post-Quantum-Hybrid-Handshake (X25519 + ML-KEM-768)";
+2. **profile** README: "zero-knowledge communication" → "content-blind E2E communication";
+   "tamper-proof audit log" → "tamper-evident audit log";
+   "post-quantum-encrypted" → "post-quantum hybrid handshake (X25519 + ML-KEM-768)";
    topic tags `zero-knowledge` → `metadata-minimization`, `post-quantum` → `post-quantum-hybrid`.
 3. **renker-core**: added `SECURITY_PROPERTIES.md` (evidence matrix) and committed
    real benchmark numbers in `benchmarks/RESULTS.md`.

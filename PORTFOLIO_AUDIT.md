@@ -53,7 +53,7 @@ Note: `custos` lives under the `renker-industries` org (`renker-industries/custo
 others under `sebastianrenker/*`. `renker-flint` (`sebastianrenker/renker-flint`) is a
 config/measurement/operations layer, not an executable engine: `measurements/` is
 deliberately empty until its Phase-0 baseline is run, so it has **no verified numbers yet** —
-correctly labelled "Konzeptphase" and using an `inferred` vs `verified` (provider-reported)
+correctly labelled "concept phase" and using an `inferred` vs `verified` (provider-reported)
 distinction that matches the rest of the portfolio's evidence discipline.
 
 ## Findings by lens
