@@ -53,6 +53,7 @@ orchestrator core has no automated tests. Honest status: **NO CORE TESTS**.
 | CUSTOS "verifies" agent claims | CUSTOS | 16 tests passing; evidence-driven checks; "test passed" ≠ "bug fixed" | **TESTED** | scope as "evidence, not proof of correctness" |
 | Renker Swarm "autonomous" multi-agent | renker-swarm | orchestration loop; roles assigned by config, not emergent; **no core tests** | **IMPLEMENTED, UNTESTED** | "controlled autonomy; assigned roles" — avoid "emergent"; add tests |
 | Rencora app enforces renker-core-style boundaries | rencora | 77 tests passing incl. `test_filesystem_security`, `test_capabilities`, `test_desktop_sandbox`, `test_audit_rotation` | **TESTED** | keep; it is the applied showcase |
+| renker-flint "provably lowers token cost" | renker-flint | `MEASUREMENT.md` defines a provider-reported falsification protocol; `measurements/` is **empty** (Phase 0 not run) | **CONCEPT / NOT YET MEASURED** | keep "Konzeptphase"; numbers stay `inferred` until a provider-reported baseline exists — no savings claim as fact yet |
 
 ## Corrections applied in this pass
 

@@ -45,8 +45,16 @@ crypto prototype (RenkerVault), or an application (Rencora).
 | continuum | Research prototype (Phase 0), continual-learning architecture | MIT | 9 files | ✅ 32 passed |
 | renkervault | Crypto **prototype** — content-blind E2E chat | MIT | 14 files | ✅ 82 passed (client) |
 | rencora | Application / showcase | Proprietary | 18 files | ✅ 77 passed |
+| renker-flint | Ops/measurement layer for token cost — **concept phase** | MIT | none (no code yet) | measurements/ empty by design |
 | renker-whitepaper | Documentation | none found | — | docs only |
 | sebastianrenker / .github.io | Profile & landing | — | — | claims corrected |
+
+Note: `custos` lives under the `renker-industries` org (`renker-industries/custos`), the
+others under `sebastianrenker/*`. `renker-flint` (`sebastianrenker/renker-flint`) is a
+config/measurement/operations layer, not an executable engine: `measurements/` is
+deliberately empty until its Phase-0 baseline is run, so it has **no verified numbers yet** —
+correctly labelled "Konzeptphase" and using an `inferred` vs `verified` (provider-reported)
+distinction that matches the rest of the portfolio's evidence discipline.
 
 ## Findings by lens
 

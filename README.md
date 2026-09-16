@@ -52,19 +52,28 @@ flowchart TB
         vault["<b>renkervault</b><br/>Inhaltsblinder E2E-Chat<br/>Double Ratchet · PQ-Hybrid<br/><i>TypeScript</i>"]
     end
 
+    subgraph ops["Qualität &amp; Betrieb (querschnittlich, Dev-Zeit)"]
+        custos["<b>custos</b><br/>Evidenzbasierte Verifikation<br/>von Agenten-Behauptungen<br/><i>Claude-Code-Plugin</i>"]
+        flint["<b>renker-flint</b><br/>Token-Reduktions-<br/>Mess- &amp; Betriebsschicht<br/><i>Konzeptphase</i>"]
+    end
+
     rencora -->|"Tool-Aufruf zur Prüfung"| core
     continuum -->|"Aktion zur Prüfung"| core
     core -->|"delegiert Autorisierungs-<br/>entscheidung"| authz
     authz -->|"ALLOW / DENY /<br/>REQUIRE_APPROVAL"| core
     core -.->|"schreibt Audit-Trail"| authz
     agents -.->|"verschlüsselter Kanal"| vault
+    custos -.->|"CI-Gate: belegt Behauptungen<br/>mit ausgeführten Checks"| trust
+    flint -.->|"misst &amp; senkt<br/>Session-Token-Kosten"| agents
 
     classDef agent fill:#1f2937,stroke:#4b5563,color:#f9fafb;
     classDef trustnode fill:#0f3d3e,stroke:#14b8a6,color:#f0fdfa;
     classDef commsnode fill:#3b0764,stroke:#a855f7,color:#faf5ff;
+    classDef opsnode fill:#3f2d0a,stroke:#f59e0b,color:#fffbeb;
     class rencora,continuum agent;
     class core,authz trustnode;
     class vault commsnode;
+    class custos,flint opsnode;
 ```
 
 **Kurz gesagt:** Agenten (`rencora`, `continuum`) fragen vor jeder sicherheitsrelevanten
@@ -72,6 +81,10 @@ Aktion die Vertrauensschicht. `renker-core` bündelt Identität, Rechte, Audit u
 Plattform-Foundation und delegiert die eigentliche Autorisierungsentscheidung an
 `renker-core-authz` – die deterministische, quelloffene Policy-Engine. `renkervault` liefert
 den verschlüsselten Kanal, wenn Agenten oder Nutzer vertraulich kommunizieren müssen.
+Querschnittlich, zur Entwicklungszeit (nicht zur Laufzeit integriert): `custos` erzwingt in
+CI, dass Agenten-Behauptungen mit **ausgeführten** Checks belegt werden statt nur behauptet,
+und `renker-flint` misst und senkt die Token-Kosten read-lastiger Sessions – beides nach
+derselben Evidenz-Regel wie der Rest der Plattform (belegen statt behaupten).
 
 ---
 
@@ -79,11 +92,13 @@ den verschlüsselten Kanal, wenn Agenten oder Nutzer vertraulich kommunizieren m
 
 | Repo | Rolle | Stack |
 |------|-------|-------|
-| [**renker-core-authz**](https://github.com/sebastianrenker/renker-core-authz) | Deterministische Capability- + Policy-Engine mit manipulationssicherem Audit für Agenten-Aktionen | Python · Apache-2.0 |
+| [**renker-core-authz**](https://github.com/sebastianrenker/renker-core-authz) | Deterministische Capability- + Policy-Engine mit tamper-evident Audit für Agenten-Aktionen | Python · Apache-2.0 |
 | [**renker-core**](https://github.com/sebastianrenker/renker-core) | Gemeinsame Plattform-Foundation: Identity, Permissions, Audit, Policy | Python |
+| [**custos**](https://github.com/renker-industries/custos) | Evidenzbasierte Verifikation von Agenten-Behauptungen: erzwingt in CI **ausgeführte** Checks (Linter, Tests, Statik) statt bloßer Zusagen | Python · MIT |
 | [**continuum**](https://github.com/sebastianrenker/continuum) | Prototyp eines kontinuierlich lernenden KI-Forschungssystems (Memory, Bayesian Optimization, Safety Gates, Anti-Hallucination) | Python |
 | [**renkervault**](https://github.com/sebastianrenker/renkervault) | Inhaltsblinder E2E-verschlüsselter Chat-Prototyp (Double Ratchet, PQ-Hybrid-Handshake, Duress-Modus) | TypeScript |
 | [**rencora**](https://github.com/sebastianrenker/rencora) | Persönlicher Desktop-KI-Assistent (Sprache, Screen/Kamera, Agenten, Gedächtnis) | Python · PyQt6 |
+| [**renker-flint**](https://github.com/sebastianrenker/renker-flint) | Token-Reduktions-Mess- & Betriebsschicht für read-lastige Agent-Sessions; belegt Einsparungen provider-seitig statt sie zu behaupten (Konzeptphase) | Konfig · Messung · MIT |
 | [**sebastianrenker.github.io**](https://github.com/sebastianrenker/sebastianrenker.github.io) | Plattform-Landingpage & Doku-Hub | HTML/CSS |
 
 ---
@@ -91,7 +106,8 @@ den verschlüsselten Kanal, wenn Agenten oder Nutzer vertraulich kommunizieren m
 ## Schwerpunkte
 
 `agentic-ai` · `authorization` · `policy-engine` · `prompt-injection` · `tamper-evident-audit`
-· `end-to-end-encryption` · `post-quantum-hybrid` · `metadata-minimization`
+· `end-to-end-encryption` · `post-quantum-hybrid` · `metadata-minimization` · `agent-verification`
+· `evidence-driven` · `token-efficiency`
 
 ---
 
