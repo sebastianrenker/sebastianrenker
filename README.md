@@ -21,3 +21,6 @@ AI and security products under **Renker Industries**.
 - **[renkervault](https://github.com/sebastianrenker/renkervault)** — end-to-end encrypted chat with a content-blind relay and post-quantum hybrid handshake
 
 [Whitepaper](https://github.com/sebastianrenker/renker-whitepaper) · [sebastianrenker.github.io](https://sebastianrenker.github.io)
+
+## Project sites
+[renker-core-authz](https://sebastianrenker.github.io/renker-core-authz/) · [renkervault](https://sebastianrenker.github.io/renkervault/) · [continuum](https://sebastianrenker.github.io/continuum/) · [renker-swarm](https://sebastianrenker.github.io/renker-swarm/) · [rencora-public](https://sebastianrenker.github.io/rencora-public/)
