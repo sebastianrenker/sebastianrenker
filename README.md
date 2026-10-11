@@ -22,5 +22,13 @@ AI and security products under **Renker Industries**.
 
 [Whitepaper](https://github.com/sebastianrenker/renker-whitepaper) · [sebastianrenker.github.io](https://sebastianrenker.github.io)
 
+## Renker Industries
+- **[custos](https://renker-industries.github.io/custos/)** — proof gates that make AI coding agents back every “done” with an executed check
+- **[selfproof](https://renker-industries.github.io/selfproof/)** — evidence ledger and gates for AI-written code (pre-release)
+
+Hub: [renker-industries.github.io](https://renker-industries.github.io/)
+
 ## Project sites
 [renker-core-authz](https://sebastianrenker.github.io/renker-core-authz/) · [renkervault](https://sebastianrenker.github.io/renkervault/) · [continuum](https://sebastianrenker.github.io/continuum/) · [renker-swarm](https://sebastianrenker.github.io/renker-swarm/) · [rencora-public](https://sebastianrenker.github.io/rencora-public/)
+
+Writing: [Guardrails outside the model](https://sebastianrenker.github.io/blog/guardrails-outside-the-model/) · [dev.to](https://dev.to/sebastianrenker/guardrails-outside-the-model-authorizing-ai-agent-actions-3hn5)
